@@ -17,4 +17,16 @@ A react project gathering many productive elements to help user with planning an
 	3- Weather API
 	4- Git with Github
 	5- Documentation with Notion and README.md
-	6- State management: Unknown (still learning react) </pre>
+	6- State management: useState & useEffect </pre>
+
+<pre>III- Details:
+An all-in-one solution to help with productivity. combining many of productivity planning needs to help manage and streamline workday & productivity planning.</pre>
+
+<pre>IV- Features:
+    1- Real-time clock to help keep tracking of time.
+    2- Weather forecast app to help with any case of emergency planning throughout the day.
+    3- A full Todo app with management to add to remove tasks.
+    4- Customization to work with 12 or 24 hour clocks - and same for Celsius to Fahrenheit for temperature.
+    5- Simple usable design.
+</pre>
+
