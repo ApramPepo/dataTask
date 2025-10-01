@@ -36,6 +36,6 @@ A react project gathering many productive elements to help user with planning an
             src > assets && components && services && styles && utils</pre>
 
 <pre>VI- Dependencies installed:
-1- React initiated with Vite
-2- Axios
-3- Material-MUI</pre>
+    1- React initiated with Vite
+    2- Axios
+    3- Material-MUI</pre>
