@@ -59,7 +59,7 @@ export default function Header() {
                         '&:active': {
                             color: '#333',
                         }
-                    }}>Github</a></Tab>
+                    }}>Github <img width="10px" src="https://img.icons8.com/?size=100&id=12599&format=png&color=228BE6" alt="Github logo"/></a></Tab>
                     <Tab><a target="_blank" href="https://www.linkedin.com/in/abramadel/" style={{
                         color: 'inherit',
                         textDecoration: 'none',
@@ -73,7 +73,7 @@ export default function Header() {
                         '&:active': {
                             color: '#333',
                         }
-                    }}>Linkedin</a></Tab>
+                    }}>Linkedin <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=228BE6" alt="Linkedin Logo" width="10px"/></a></Tab>
                 </TabList>
             </Tabs>
         </div>
