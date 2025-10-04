@@ -11,6 +11,7 @@ const Item = styled(Sheet)(({ theme }) => ({
     padding: theme.spacing(1),
     textAlign: 'center',
     borderRadius: 4,
+
     color: theme.vars.palette.text.secondary,
     ...theme.applyStyles('dark', {
         backgroundColor: theme.palette.background.level1,
@@ -22,25 +23,52 @@ export default function Weather() {
 
     const [weatherData, setWeatherData] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
+    const [longitude, setLongitude] = React.useState(null);
+    const [latitude, setLatitude] = React.useState(null);
     const [error, setError] = React.useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async (lat, long) => {
             setLoading(true);
             setError(null);
             setWeatherData(null);
             try {
-                const data = await getData();
+                const data = await getData(lat, long);
                 if (data) {
                     setWeatherData(data);
+                } else {
+                    setError('Weather data not found');
                 }
             } catch (error) {
                     setError(error.message || "Failed to fetch weather");
                 } finally {
                     setLoading(false);
                 }
-            }
-        fetchData();
+            };
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const lat = position.coords.latitude;
+                const long = position.coords.longitude;
+                setLatitude(lat);
+                setLongitude(long);
+                setError(null);
+                fetchData(lat, long);
+            },
+                (err) => {
+                setError(err.message);
+                console.error("Geolocation error", err);
+                fetchData(null, null);
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0,
+                });
+        } else {
+            setError("Geolocation not supported by this browser.");
+            fetchData(null, null);
+        }
     }, []);
 
     if (loading) {
@@ -78,8 +106,6 @@ export default function Weather() {
     // Data fetched to view
     const { location, current } = weatherData || {};
     const city = location?.name || 'Unknown';
-    const land = location?.country || 'Unknown Country';
-    const regional = location?.region || 'Unknown';
     const temp = current.temp_c || 'N/A';
     const condition = current?.condition?.text || 'N/A';
 
@@ -92,8 +118,8 @@ export default function Weather() {
             <Grid size={8}>
                 <Item>
                     <h2>{city}</h2>
-                    <h3>{land}</h3>
-                    <h4>{regional}</h4>
+                    <h3>{location?.country || 'Unknown Country'}</h3>
+                    <p>{location?.region || 'Unknown'}</p>
                 </Item>
             </Grid>
             <Grid size={2}>
@@ -105,7 +131,18 @@ export default function Weather() {
             </Grid>
             <Grid size={8}>
                 <Item>
-                    <h2>Last updated: <br/>{new Date(current?.last_updated || Date.now()).toLocaleString()}</h2>
+                    <h3>Last updated: <br/><br/><br/>{new Date(current?.last_updated || Date.now()).toLocaleString()}</h3>
+                </Item>
+            </Grid>
+            <Grid size={2}>
+                <Item style={{
+                    display: 'flex',
+                    textAlign: 'center',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    boxSizing: 'border-box',
+                }}>
+                    <button>Toggle Temperature Measurements</button>
                 </Item>
             </Grid>
         </Grid>
