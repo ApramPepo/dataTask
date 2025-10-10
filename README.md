@@ -1,15 +1,15 @@
 # dataTask
-A react project gathering many productive elements to help user with planning and decision-making.
+A React project gathering many productive elements to help user with planning and decision-making.
 
 
 <pre>I- Requirements:
 	1-Header: Home - About - Github - Linkedin
 	2-Weather: Small bar displaying current temperature (C and F) - today's weather - wind speed - location
 	3-To do app: Gathers user data to add to list and manage it below the list
-		a-Gather: ID(auto-generated) - Task name - Descrption - Date - Priority - Important - Repeat - Done
+		a-Gather: ID(auto-generated) - Task name - Description - Date - Priority - Important - Repeat - Done
 		b-Control: Edit - Delete
 	4-Real-time clock: showing user's current time with the option to toggle 24h and 12h - User's region
-	5-Footer: credit - techstack - linkedin</pre>
+	5-Footer: credit - tech stack - linkedin</pre>
 
 <pre>II- Tools:
 	1- React (vite)
@@ -20,7 +20,7 @@ A react project gathering many productive elements to help user with planning an
 	6- State management: useState & useEffect
     7- WebStorm </pre>
 
-<strong>III- Details:</strong>
+<strong>III - Details:</strong>
 <p>An all-in-one solution to help with productivity. combining many of productivity planning needs to help manage and streamline workday & productivity planning.</p>
 
 <pre>IV- Features:
