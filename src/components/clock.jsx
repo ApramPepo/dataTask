@@ -19,7 +19,7 @@ export default function Clock() {
 
     useEffect(() => {
         const updateRegion = () => {
-         setRegion(Intl.DateTimeFormat().resolvedOptions().timeZone);
+         setRegion(Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown');
         };
 
         updateRegion();
