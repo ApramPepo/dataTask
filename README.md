@@ -38,3 +38,8 @@ A React project gathering many productive elements to help user with planning an
 <pre>VI- Dependencies installed:
     1- React initiated with Vite
     2- Material-MUI</pre>
+
+<pre>VII- Todo Component:
+Form to add tasks (name, desc, date, priority, etc.),
+table to view/edit/delete, responsive design.</pre>
+

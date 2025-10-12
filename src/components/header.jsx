@@ -2,11 +2,13 @@ import * as React from 'react';
 import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
+import Clock from './clock.jsx';
 
 export default function Header() {
     return (
         <div
             style={{
+                position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -14,6 +16,7 @@ export default function Header() {
             }}
         >
             <Tabs aria-label="Centered tabs" defaultValue={0}>
+                <Clock />
                 <TabList sx={{
                     width: '100vw',
                     justifyContent: 'center',
