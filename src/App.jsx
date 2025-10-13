@@ -2,9 +2,18 @@ import * as React from 'react';
 import Form from "./components/form.jsx";
 import List from "./components/list.jsx";
 import { Box } from "@mui/material";
+import {useEffect} from "react";
 
 export default function App() {
-    const [task, setTask] = React.useState([]);
+    const [task, setTask] = React.useState( () => {
+        const savedTasks = localStorage.getItem("task");
+        return savedTasks ? JSON.parse(savedTasks) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("task", JSON.stringify(task));
+    }, [task]);
+
     const handleAddTask = (newTask) => {
         setTask((prevTask) => [...prevTask, newTask]);
     };
