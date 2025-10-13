@@ -38,7 +38,7 @@ export default function Clock() {
         } else {
             const pmAmHours = hours >= 12 ? 'PM' : 'AM';
             const hours12 = hours % 12 || 12;
-            return `${hours12}:${minutes}:${seconds}:${pmAmHours}`;
+            return `${hours12}:${minutes}:${seconds} ${pmAmHours}`;
         }
     };
 
