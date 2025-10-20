@@ -6,6 +6,19 @@ import Clock from './clock.jsx';
 import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
+
+    const location = useLocation();
+    const getTabValue = () => {
+        switch (location.pathname) {
+            case '/':
+                return 0;
+            case '/about':
+                return 1;
+            default:
+                return 0;
+        }
+    };
+
     return (
         <div
             style={{
@@ -22,10 +35,14 @@ export default function Header() {
                     width: '100vw',
                     justifyContent: 'center',
                 }}>
-                    <Tab><Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <Tab sx={{ '&.Mui-selected': {
+                    color: '#1976d2', fontWeight: 'bold', borderBottom: '1px solid #1976d2' }
+                    }}><Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
                         Home
                     </Link></Tab>
-                    <Tab><Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}> {/* ✅ FIXED */}
+                    <Tab sx={{ '&.Mui-selected': {
+                            color: '#1976d2', fontWeight: 'bold', borderBottom: '1px solid #1976d2' }
+                    }}><Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}>
                         About
                     </Link></Tab>
                     <Tab><a target="_blank" href="https://github.com/ApramPepo" style={{
