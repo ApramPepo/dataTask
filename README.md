@@ -18,7 +18,8 @@ A React project gathering many productive elements to help user with planning an
 	4- Git with Github
 	5- Documentation with Notion and README.md
 	6- State management: useState & useEffect
-    7- WebStorm </pre>
+    7- WebStorm 
+    8- React-Router </pre>
 
 <strong>III - Details:</strong>
 <p>An all-in-one solution to help with productivity. combining many of productivity planning needs to help manage and streamline workday & productivity planning.</p>
@@ -37,7 +38,8 @@ A React project gathering many productive elements to help user with planning an
 
 <pre>VI- Dependencies installed:
     1- React initiated with Vite
-    2- Material-MUI</pre>
+    2- Material-MUI
+    3- React-Router</pre>
 
 <pre>VII- Todo Component:
 Form to add tasks (name, desc, date, priority, etc.),

@@ -3,6 +3,7 @@ import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
 import Clock from './clock.jsx';
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
     return (
@@ -17,38 +18,16 @@ export default function Header() {
         >
             <Tabs aria-label="Centered tabs" defaultValue={0}>
                 <Clock />
-                <TabList sx={{
+                <TabList style={{
                     width: '100vw',
                     justifyContent: 'center',
                 }}>
-                    <Tab><a href="#" style={{
-                        color: 'inherit',
-                        textDecoration: 'none',
-                    }} sx={{
-                        '&:visited': {
-                            color: '#333',
-                        },
-                        '&:hover': {
-                            color: '#ccc',
-                        },
-                        '&:active': {
-                            color: '#333',
-                        }
-                    }}>Home</a></Tab>
-                    <Tab><a href="#" style={{
-                        color: 'inherit',
-                        textDecoration: 'none',
-                    }} sx={{
-                        '&:visited': {
-                            color: '#333',
-                        },
-                        '&:hover': {
-                            color: '#ccc',
-                        },
-                        '&:active': {
-                            color: '#333',
-                        }
-                    }}>About</a></Tab>
+                    <Tab><Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Home
+                    </Link></Tab>
+                    <Tab><Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}> {/* ✅ FIXED */}
+                        About
+                    </Link></Tab>
                     <Tab><a target="_blank" href="https://github.com/ApramPepo" style={{
                         color: 'inherit',
                         textDecoration: 'none',
